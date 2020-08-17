@@ -1,7 +1,5 @@
 package com.laptrinhweb.dto;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,17 +23,17 @@ public class TimeKeepingDTO {
 
 	private String dateEnd;
 
-	public int morning;
+	private Long employeeId;
 
-	public int afternoon;
+	private int satus;
 
-	public int workDay;
+	public int getSatus() {
+		return satus;
+	}
 
-	private int status;
-
-	private EmployeeEntity employee;
-
-	private List<TimeKeepingDTO> listTKD;
+	public void setSatus(int satus) {
+		this.satus = satus;
+	}
 
 	public Long getId() {
 		return id;
@@ -101,52 +99,12 @@ public class TimeKeepingDTO {
 		this.dateEnd = dateEnd;
 	}
 
-	public int getMorning() {
-		return morning;
+	public Long getEmployeeId() {
+		return employeeId;
 	}
 
-	public void setMorning(int morning) {
-		this.morning = morning;
+	public void setEmployeeId(Long employeeId) {
+		this.employeeId = employeeId;
 	}
 
-	public int getAfternoon() {
-		return afternoon;
-	}
-
-	public void setAfternoon(int afternoon) {
-		this.afternoon = afternoon;
-	}
-
-	public int getWorkDay() {
-		return workDay;
-	}
-
-	public void setWorkDay(int workDay) {
-		this.workDay = workDay;
-	}
-
-	public int getStatus() {
-		return status;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-	public EmployeeEntity getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(EmployeeEntity employee) {
-		this.employee = employee;
-	}
-
-	public List<TimeKeepingDTO> getListTK() {
-		return listTKD;
-	}
-
-	public void setListTK(List<TimeKeepingDTO> listTKD) {
-		this.listTKD = listTKD;
-	}
-	
 }

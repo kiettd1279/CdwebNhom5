@@ -49,62 +49,10 @@ public class EmployeeEntity {
 	@JoinColumn(name = "department_id")
 	private DeparmentEntity department;
 	
-	@Column(name = "active" )
+	@Column(name = "cative" )
 	int active;
 	
-	@Column(name = "workingDay")
-	private String workingDay;
 	
-	@Column(name = "identityCard")
-	private String identityCard;
-	
-	@Column(name = "address")
-	private String address;
-	
-	@Column(name = "introduceBuddy")
-	private String introduceBuddy;
-	
-	
-	public int getActive() {
-		return active;
-	}
-
-	public void setActive(int active) {
-		this.active = active;
-	}
-
-	public String getWorkingDay() {
-		return workingDay;
-	}
-
-	public void setWorkingDay(String workingDay) {
-		this.workingDay = workingDay;
-	}
-
-	public String getIdentityCard() {
-		return identityCard;
-	}
-
-	public void setIdentityCard(String identityCard) {
-		this.identityCard = identityCard;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getIntroduceBuddy() {
-		return introduceBuddy;
-	}
-
-	public void setIntroduceBuddy(String introduceBuddy) {
-		this.introduceBuddy = introduceBuddy;
-	}
-
 	public List<JobHistoryEntity> getJobHistory() {
 		return jobHistory;
 	}
