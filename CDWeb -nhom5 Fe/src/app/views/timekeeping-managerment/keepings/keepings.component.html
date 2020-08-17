@@ -142,7 +142,7 @@
   
         <ngx-datatable-column name="Chấm công">
             <ng-template let-row="row" ngx-datatable-cell-template>
-              <button type="button" (click)="startUpAfternoon(row)" class="btn btn-danger"><i class="fa fa-plus"></i> Bắt đầu ca trưa </button>
+              <button id="buttonTTT" type="button" (click)="startUpAfternoon($event,row)" class="btn btn-danger"><i class="fa fa-plus"></i> Bắt đầu ca trưa </button>
             </ng-template>
         </ngx-datatable-column>
   

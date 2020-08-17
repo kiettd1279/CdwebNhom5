@@ -60,7 +60,8 @@ export class KeepingsComponent implements OnInit {
    //   this.paging = res.paging;
     });
   }
-  startUpMorning(timeKeeping : Timekeeping){
+  startUpMorning(event,timeKeeping : Timekeeping){
+    console.log("event",event);
     this.timeKeepingService.creatTimeKeepingDetailMorning(timeKeeping).subscribe(res => {
       this.toastr.success("Đã bắt đầu đi làm","Nhân viên " +timeKeeping.id);
       this.loadTimeKeepingMorning();
@@ -88,7 +89,7 @@ export class KeepingsComponent implements OnInit {
   }
   closeTimeKeeping(){
     this.timeKeepingService.closeTimeKeeping().subscribe(res=> {
-      if(res.data != null){
+      if(res. != null){
         this.toastr.info("đã chốt lương","Thành Công");
       }
     });

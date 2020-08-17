@@ -47,7 +47,6 @@ export class TimekeepingDetailComponent implements OnInit {
   removeTimeKeepingDetail(timekeepingdetail : TimekeepingDetail){
     this.timeKeepingDetailService.removeTimeKeepingDetail(timekeepingdetail).subscribe(res =>{
       this.toastr.error("Đã Xóa Ca "+timekeepingdetail.shift,"Nhân viên " +timekeepingdetail.id );
-      console.log(timekeepingdetail);
       this.loadTimeKeepingDetailMorning();
       this.loadTimeKeepingDetailAfternoon();
     });
