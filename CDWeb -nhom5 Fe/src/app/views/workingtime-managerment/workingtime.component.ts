@@ -57,7 +57,7 @@ export class WorkingtimeComponent implements OnInit {
     }
     this.workingTimeService.list(this.paging).subscribe(res => {
       this.workingTimes = res.data;
-      this.paging = res.paging;
+  
     });
   }
 

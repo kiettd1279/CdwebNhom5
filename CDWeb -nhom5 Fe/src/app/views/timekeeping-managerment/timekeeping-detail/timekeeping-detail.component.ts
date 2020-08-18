@@ -41,7 +41,7 @@ export class TimekeepingDetailComponent implements OnInit {
     
       this.loadTimeKeepingDetailMorning();
       this.loadTimeKeepingDetailAfternoon();
-   //   this.paging = res.paging;
+  
     });
   }
   removeTimeKeepingDetail(timekeepingdetail : TimekeepingDetail){

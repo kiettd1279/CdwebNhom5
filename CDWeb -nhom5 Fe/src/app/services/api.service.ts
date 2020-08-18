@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private cookieService: CookieService) {
   }
   baseUrl = 'http://localhost:8081/';
   apiUrl = {
+    users: {
+      home: `${this.baseUrl}users`,
+      login: `${this.baseUrl}users/login`
+    },
     employees: {
       home: `${this.baseUrl}employees`,
       images: `${this.baseUrl}uploads/images/employees/`,

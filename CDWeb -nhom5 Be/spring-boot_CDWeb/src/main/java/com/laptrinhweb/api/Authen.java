@@ -32,11 +32,12 @@ public class Authen {
 
 	@PostMapping(value = "/authen/login")
 	private ResponJWT login(@RequestBody FormLogin login) {
+		System.out.println(login);
 		Authentication authen = authenticationManager
 				.authenticate(new UsernamePasswordAuthenticationToken(login.getUser(), login.getPass()));
 		SecurityContextHolder.getContext().setAuthentication(authen);
 		String jwt = tokenProwireder.generateToken((UserDetails) authen.getPrincipal());
-		return new ResponJWT(jwt);
+	return new ResponJWT(jwt);
 	}
 	
 	@PostMapping(value = "/authen/register")
