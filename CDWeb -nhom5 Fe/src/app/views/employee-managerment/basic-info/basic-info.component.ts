@@ -87,7 +87,7 @@ export class BasicInfoComponent implements OnInit {
     }
     this.employeeService.list(this.paging).subscribe(res => {
       this.employees = res.data;
-   //   this.paging = res.paging;
+  
     });
   };
 

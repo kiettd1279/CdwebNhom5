@@ -9,10 +9,10 @@ import { RootObj } from '../models/root-obj';
 })
 export class UserService {
   constructor(private apiService: ApiService) { }
-  login(userName: string, password: string): Observable<RootObj<Login>> {
+  login(user: string, pass: string): Observable<RootObj<Login>> {
     const data = {
-      userName: userName,
-      password: password,
+      user: user,
+      pass: pass,
     };
     return this.apiService.post<RootObj<Login>>(this.apiService.apiUrl.users.login, data);
   }

@@ -12,8 +12,8 @@ export class ApiService {
   baseUrl = 'http://localhost:8081/';
   apiUrl = {
     users: {
-      home: `${this.baseUrl}users`,
-      login: `${this.baseUrl}users/login`
+      home: `${this.baseUrl}authen`,
+      login: `${this.baseUrl}authen/login`
     },
     employees: {
       home: `${this.baseUrl}employees`,

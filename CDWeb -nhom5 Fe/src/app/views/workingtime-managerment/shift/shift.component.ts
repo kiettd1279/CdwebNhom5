@@ -38,7 +38,6 @@ export class ShiftComponent implements OnInit {
     }
     this.shiftService.list(this.paging).subscribe(res => {
       this.shifts = res.data;
-      this.paging = res.paging;
     });
   }
 
