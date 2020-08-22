@@ -23,7 +23,7 @@ export class ProviceComponent implements OnInit {
     }
     this.locationService.listProvince(this.paging).subscribe(res => {
       this.provinces = res.data;
-      this.paging = res.paging;
+      // this.paging = res.paging;
     });
   }
 }

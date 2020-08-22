@@ -16,16 +16,19 @@ export class LoginComponent {
      private cookieService: CookieService) {}
   login() {
     this.userService.login(this.user, this.pass).subscribe( res => {
-      if (res.errorCode === 0) {
+      if (res.accessToken != null) {
         this.message = '';
         // save user info, then redirect to dashboard
-        this.cookieService.set('userInfo', JSON.stringify(res.data));
-        this.cookieService.set('token', res.data.token);
+        this.cookieService.set('userInfo', JSON.stringify(""));
+        this.cookieService.set('token', res.accessToken);
         this.authService.setLoggedIn(true);
         this.router.navigate(['/dashboard']);
+        console.log("login thanh cong")
       } else {
-        this.message = res.message;
+        // this.message = res.message;
       }
+
+      console.log(res)
     });
   }
 }

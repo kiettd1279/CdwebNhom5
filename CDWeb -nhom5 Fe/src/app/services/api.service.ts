@@ -13,7 +13,12 @@ export class ApiService {
   apiUrl = {
     users: {
       home: `${this.baseUrl}authen`,
-      login: `${this.baseUrl}authen/login`
+      login: `${this.baseUrl}authen/login`,
+      register:`${this.baseUrl}authen/register`
+    },
+    departments: {
+      getDept: `${this.baseUrl}derparment`,
+      home: `${this.baseUrl}derparment`
     },
     employees: {
       home: `${this.baseUrl}employees`,
@@ -38,9 +43,9 @@ export class ApiService {
       afteroon: `${this.baseUrl}time-keeping-detail/afternoon`
 
     },
-    departments: {
-      home: `${this.baseUrl}departments`
-    },
+    // departments: {
+    //   home: `${this.baseUrl}departments`
+    // },
     degrees: {
       home: `${this.baseUrl}degrees`
     },
@@ -91,4 +96,5 @@ export class ApiService {
   delete<T>(url: string): Observable<T> {
     return this.http.delete<T>(url);
   }
+  
 }

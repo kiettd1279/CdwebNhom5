@@ -1,5 +1,4 @@
 export interface Login {
-    user: string;
-    pass:String;
-    token: string
+    tokenTile: string;
+    accessToken:string;
 }

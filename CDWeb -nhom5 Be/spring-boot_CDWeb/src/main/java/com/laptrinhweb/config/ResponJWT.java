@@ -3,7 +3,6 @@ package com.laptrinhweb.config;
 public class ResponJWT {
 	private final String tokenTile = "Bearer";
 	private String accessToken;
-
 	
 	public ResponJWT(String accessToken) {
 		this.accessToken = accessToken;
