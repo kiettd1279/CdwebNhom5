@@ -48,7 +48,6 @@ public class DeparmentService implements IDeparmentService {
 		
 		if (dto.getId() != null) {
 			DeparmentEntity oldEntity = departmanetReposiotry.findOne(dto.getId());
-//			System.out.println(oldEntity);
 			newEntity = departmentConverter.toEntity(dto, oldEntity);
 			
 		}else {

@@ -23,18 +23,15 @@ public class DeparmentAPI {
 	private DeparmentService deparmentService;
 
 	@GetMapping(value = "/derparment")
-	public List<DeparmentDTO> getAllDerparment() {
+	public List<DeparmentDTO>getAllDerparment(){
 		return deparmentService.findAll();
 	}
-
-	@PostMapping(name = "/derparment")
+	@PostMapping(name  = "/derparment")
 	public DeparmentDTO creatDeparment(@RequestBody DeparmentDTO model) {
 		System.out.println(model.getName());
 		return deparmentService.save(model);
-
+		
 	}
-
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping(value = "/derparment/{id}")
 	public DeparmentDTO updateDeparment(@RequestBody DeparmentDTO model, @PathVariable("id") long id) {
 		model.setId(id);

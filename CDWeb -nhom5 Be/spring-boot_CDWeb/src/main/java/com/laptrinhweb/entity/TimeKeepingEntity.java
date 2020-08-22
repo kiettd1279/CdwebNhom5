@@ -1,6 +1,8 @@
 package com.laptrinhweb.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,34 +20,48 @@ public class TimeKeepingEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@Column
-	private int workTime ;
-	
+	private int workTime;
+
 	@Column
-	private int minimumTime ;
-	
+	private int minimumTime;
+
 	@Column
 	private int timeLate;
-	
+
 	@Column
-	private int overTime ;
-	
+	private int overTime;
+
 	@Column
-	private int note ;
-	
+	private int note;
+
 	@Column
 	private String dateStart;
-	
+
 	@Column
-	private String dateEnd ;
-	
+	private String dateEnd;
+
 	@Column
-	private int status ;
+	public int morning;
+
+	@Column
+	public int afternoon;
+
+	@Column
+	public int workDay;
+
+	@Column
+	private int status;
 	
+	
+
 	@ManyToOne
-	@JoinColumn(name = "timeKeeping_id")
+	@JoinColumn(name = "employee_id")
 	private EmployeeEntity employee;
+
+	@OneToMany(mappedBy = "timeKeeping")
+	private List<TimeKeepingDetailEntity> listTimeKeeping = new ArrayList<TimeKeepingDetailEntity>();
 
 	public Long getId() {
 		return id;
@@ -125,5 +142,40 @@ public class TimeKeepingEntity {
 	public void setEmployee(EmployeeEntity employee) {
 		this.employee = employee;
 	}
-	
+
+	public int getMorning() {
+		return morning;
+	}
+
+	public void setMorning(int morning) {
+		this.morning = morning;
+	}
+
+	public int getAfternoon() {
+		return afternoon;
+	}
+
+	public void setAfternoon(int afternoon) {
+		this.afternoon = afternoon;
+	}
+
+	public int getWorkDay() {
+		return workDay;
+	}
+
+	public void setWorkDay(int workDay) {
+		this.workDay = workDay;
+	}
+
+	public List<TimeKeepingDetailEntity> getJobHistory() {
+		return listTimeKeeping;
+	}
+
+	public void setJobHistory(List<TimeKeepingDetailEntity> listTimeKeeping) {
+		this.listTimeKeeping = listTimeKeeping;
+	}
+
+	public void plusWorkTime(int timeWorking) {
+		this.workTime += timeWorking;
+	}
 }

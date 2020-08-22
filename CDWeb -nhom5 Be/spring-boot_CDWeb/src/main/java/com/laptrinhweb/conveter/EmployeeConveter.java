@@ -15,15 +15,26 @@ public class EmployeeConveter {
 		entity.setEmail(dto.getEmail());
 		entity.setPhoneNumber(dto.getPhoneNumber());
 		entity.setSalary(dto.getSalary());
+		entity.setAddress(dto.getAddress());
+		entity.setWorkingDay(dto.getWorkingDay());
+		entity.setIntroduceBuddy(dto.getIntroduceBuddy());
+		entity.setIdentityCard(dto.getIdentityCard());
+		
 		return entity;
 	}
 	public EmployeeDTO toDTO(EmployeeEntity entity) {
 		EmployeeDTO dto = new EmployeeDTO();
+		dto.setId(entity.getId());
 		dto.setEmail(entity.getEmail());
 		dto.setFirstName(entity.getFirstName());
 		dto.setLastName(entity.getLastname());
 		dto.setPhoneNumber(entity.getPhoneNumber());
 		dto.setSalary(entity.getSalary());
+		dto.setAddress(entity.getAddress());
+		dto.setWorkingDay(entity.getWorkingDay());
+		dto.setIntroduceBuddy(entity.getIntroduceBuddy());
+		dto.setIdentityCard(entity.getIdentityCard());
+		
 		return dto;
 	}
 	public EmployeeEntity toEntity(EmployeeEntity entity ,EmployeeDTO dto) {
@@ -32,6 +43,10 @@ public class EmployeeConveter {
 		entity.setLastname(dto.getLastName());
 		entity.setPhoneNumber(dto.getPhoneNumber());
 		entity.setSalary(dto.getSalary());
+		entity.setAddress(dto.getAddress());
+		entity.setWorkingDay(dto.getWorkingDay());
+		entity.setIntroduceBuddy(dto.getIntroduceBuddy());
+		entity.setIdentityCard(dto.getIdentityCard());
 		
 		return entity;
 		
